@@ -30,14 +30,14 @@ def main ():
     matriz[1][1] = d
     inversa = inversao(matriz)
     print('Antes:')
-    for linha in matriz:
-        for coluna in matriz[linha]:
-            print(matriz[linha][coluna], end = '/t')
+    for linha in range(len(matriz)):
+        for coluna in range(len(matriz[linha])):
+            print(matriz[linha][coluna], end = '\t')
         print()
     print('Depois:')
-    for linha in inversa:
-        for coluna in inversa[linha]:
-            print(inversa[linha][coluna], end = '/t')
+    for linha in range(len(inversa)):
+        for coluna in range(len(inversa[linha])):
+            print(inversa[linha][coluna], end = '\t')
         print()
 
 main()
