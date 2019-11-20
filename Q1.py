@@ -44,3 +44,5 @@ def main ():    #E
         lista_dicionarios_pacientes.append(dicionario_paciente)
         print(lista_dicionarios)
     arquivo.close()
+
+main()
