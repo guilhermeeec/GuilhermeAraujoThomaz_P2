@@ -29,16 +29,19 @@ def main ():
     matriz[1][0] = c
     matriz[1][1] = d
     inversa = inversao(matriz)
-    print('Antes:')
-    for linha in range(len(matriz)):
-        for coluna in range(len(matriz[linha])):
-            print(matriz[linha][coluna], end = '\t')
-        print()
-    print('Depois:')
-    for linha in range(len(inversa)):
-        for coluna in range(len(inversa[linha])):
-            print(inversa[linha][coluna], end = '\t')
-        print()
+    if inversa is None:
+        print('Matriz não inversível')
+    else:
+        print('Antes:')
+        for linha in range(len(matriz)):
+            for coluna in range(len(matriz[linha])):
+                print(matriz[linha][coluna], end = '\t')
+            print()
+        print('Depois:')
+        for linha in range(len(inversa)):
+            for coluna in range(len(inversa[linha])):
+                print(inversa[linha][coluna], end = '\t')
+            print()
 
 main()
     
