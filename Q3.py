@@ -7,16 +7,14 @@ def isCollisionDetected (dict_retang1, dict_retang2):
     BLy2 = dict_retang2['BottomLeft'][1]
     TRx2 = dict_retang2['TopRight'][0]
     TRy2 = dict_retang2['TopRight'][1]
-    if ((TRx2 >= BLx1) and (TRy2 >= BLy1)) or ((TRx1 >= BLx2) and (TRy1 >= BLy2)):
-        return True
-    elif ((TRx1 >= BLx2) and (BLy1 <= TRy2)) or ((TRx2 >= BLx1) and (BLy2 <= TRy1)):
-        return True
-    elif ((TRx1 <= BLx2) and (BLy1 <= TRy2)) or ((TRx2 <= BLx1) and (BLy1 <= TRy1)):
-        return True
-    elif ((BLx1 <= TRx2) and (TRy1 >= BLy2)) or ((BLx2 <= TRx1) and (TRy2 >= BLy1)):
-        return True
+    if TRx2 >= TRx1:
+        caso1 = ((TRx1 >= BLx2) and (TRy1 >= BLy2))
+        caso2 = ((TRx1 >= BLx2) and (BLy1 <= TRy2))
     else:
-        return False
+        caso1 = ((BLx1 <= TRx2) and (BLy1 <= TRy2))
+        caso2 = ((BLx1 <= TRx2) and (TRy1 >= BLy2))
+    colisao = caso1 or caso2
+    return colisao
 
 def main ():
     BLx1 = int(input('BLx1: '))
