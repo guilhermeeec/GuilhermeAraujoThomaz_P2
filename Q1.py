@@ -39,7 +39,7 @@ def main ():    #E
         dicionario_paciente['DATA_DE_NASCIMENTO'] = dicionario_data(lista_infos[2])
         dicionario_paciente['DATA_DO_CADASTRO'] = dicionario_data(lista_infos[3])
         dicionario_paciente['ATIVO'] = boolean_ativo(lista_infos[4])
-        lista_dicionarios_pacientes.append(dicionario_paciente)
+        lista_dicionarios_pacientes.append(dicionario_paciente.copy())
     print(lista_dicionarios_pacientes)
     arquivo.close()
 
