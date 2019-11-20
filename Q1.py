@@ -5,11 +5,9 @@ def dicionario_data (data):     #A
     dicionario = {'ANO':ano, 'MES':mes, 'DIA':dia}
 
 def boolean_ativo (string_ativo):   #B
-    if string_ativo[-1] == '/n':
-        string_ativo = string_ativo[:-1]
-    if string_ativo == 'SIM':
+    if string_ativo[:3] == 'SIM':
         variavel_booleana = True
-    elif string_ativo == 'NAO':
+    elif string_ativo[:3] == 'NAO':
         variavel_booleana = False
     return variavel_booleana
 
@@ -17,7 +15,7 @@ def lista_strings (string):     #C
     lista_palavras = []
     inicio_palavra = 0
     for indice in range (len(string)):
-        if string [indice] == ':'
+        if string [indice] == ':':
             lista_palavras.append(string[inicio_palavra:indice])
             inicio_palavra = indice + 1
     lista_palavras.append(string[inicio_palavra:])
@@ -38,11 +36,11 @@ def main ():    #E
         lista_infos = lista_strings(paciente)
         dicionario_paciente['CPF'] = lista_infos[0]
         dicionario_paciente['NOME'] = lista_infos[1]
-        dicionario_paciente['DATA_DE_NASCIMENTO'] = dicionario_datas(lista_infos[2]
-        dicionario_paciente['DATA_DO_CADASTRO'] = dicionario_datas(lista_infos[3]
+        dicionario_paciente['DATA_DE_NASCIMENTO'] = dicionario_data(lista_infos[2])
+        dicionario_paciente['DATA_DO_CADASTRO'] = dicionario_data(lista_infos[3])
         dicionario_paciente['ATIVO'] = boolean_ativo(lista_infos[4])
         lista_dicionarios_pacientes.append(dicionario_paciente)
-        print(lista_dicionarios)
+    print(lista_dicionarios_pacientes)
     arquivo.close()
 
 main()
